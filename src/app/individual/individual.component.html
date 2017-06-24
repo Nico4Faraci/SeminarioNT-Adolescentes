@@ -1,54 +1,100 @@
 <div class="row">
   <form class="col s12">
     <div class="section">
-      <h5>Datos zonales</h5>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Ingrese nombre de la escuela" id="escuela" type="text" class="validate">
-          <label for="escuela">Escuela</label>
-        </div>
-        <div class="input-field col s6">
-          <input placeholder="Efector de salud" id="efector" type="text" class="validate">
-          <label for="efector">Efector de salud</label>
+      <div class="card-panel grey lighten-5 z-depth-3">
+        <h6>Datos zonales</h6>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">class</i>
+            <input placeholder="Ingrese nombre de la escuela" id="escuela" type="text" class="validate">
+            <label for="escuela">Escuela</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input placeholder="Efector de salud" id="efector" type="text" class="validate">
+            <label for="efector">Efector de salud</label>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <h5>Datos de la consulta</h5>
-      <div class="row">
-        <label for="fechaVisita">Fecha Visita</label>
-        <input id="fechaVisita" type="text" materialize="pickadate">
-      </div>
-      <div class="row">
-        <div class="col s4">
-          <label for="fechaVisita">Fecha Visita</label>
-          <input id="fechaVisita" type="date">
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
+      <div class="card-panel grey lighten-5 z-depth-3">
+        <h6>Datos de la consulta</h6>
+        <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">perm_contact_calendar</i>
+            <label for="fechaVisita">Fecha Visita</label>
+            <input id="dtFechaVisita" type="text" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 100, max: true, formatSubmit: 'yyyy-mm-dd', monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ], weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado' ], weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ], weekdaysLetter: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],today: 'Hoy',clear: 'Limpiar',close:'Cerrar', monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']}]">
+          </div>
+          <div class="input-field col s2">
+            <input type="checkbox" [(ngModel)]="dato" name="dato" [checked]="dato" id="test5" />
+            <label for="test5">Visita Anterior</label>
+          </div>
+          <div class="input-field col s6" *ngIf="dato">
+            <input id="fechaVisita" type="text" materialize="pickadate">
           </div>
         </div>
       </div>
     </div>
+
+
+    <div class="section">
+      <div class="card-panel grey lighten-5 z-depth-3">
+        <h6>Datos del estudiante</h6>
+        <div class="row">
+          <div class="input-field col s3">
+            <label for="lblDni">DNI</label>
+            <input id="dni" type="text">
+          </div>
+
+          <div class="input-field col s3">
+            <label for="lblEdad">Edad:</label>
+            <input id="txtEdad" type="text">
+          </div>
+
+          <div class="input-field col s3">
+            <select>
+            <option value="" disabled selected>Sexo</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+          </select>
+          </div>
+
+          <div class="input-field col s3">
+            <label for="lblGrado">Año que cursa</label>
+            <input id="txtGrado" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card-panel grey lighten-5 z-depth-3">
+        <h6>Como llega a la consulta</h6>
+        <div class="row">
+          <div class="input-field col s3">
+            <input name="group1" type="radio" id="test1" /><label for="test1">Escuela</label>
+            <input name="group1" type="radio" id="test2" /><label for="test2">Centro de salud</label>
+            <input name="group1" type="radio" id="test3" /><label for="test3">Compañero/Amigo</label>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+              <label for="textarea1">Motivo, tema, problema, inquietud (manifiesta/ inferida por el asesor) (Determinar Cuestiones sanitarias, educativas, escolares, pedagógica que atraviesan la consulta)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+          <i class="material-icons right">send</i>
+        </button>
+
+
+      </div>
+    </div>
+
   </form>
 </div>

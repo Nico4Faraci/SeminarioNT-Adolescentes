@@ -10,5 +10,12 @@ declare var $: any;
 })
 export class AppComponent {
 
+ngAfterViewInit(){
+  
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+            
+}
 
 }
