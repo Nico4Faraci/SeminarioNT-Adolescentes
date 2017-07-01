@@ -1,0 +1,138 @@
+ <div class="row">
+    <form class="col s12">
+        <!--<div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <h5>Registro para Consejerías de SALUD INTEGRAL EN ESCUELAS SECUNDARIAS Neuquén</h6>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">class</i>
+                        <input placeholder="Ingrese nombre de la escuela" id="escuela" type="text" class="validate">
+                        <label for="escuela">Escuela</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input placeholder="Efector de salud" id="efector" type="text" class="validate">
+                        <label for="efector">Efector de salud</label>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <h5>Tipo de Intervención: Grupal</h5>
+        <div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <h6>Consulta en Grupo</h6>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">perm_contact_calendar</i>
+                        <label for="fecha">Fecha </label>
+                        <input id="dtFecha" type="text" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 100, max: true, formatSubmit: 'yyyy-mm-dd', monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ], weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado' ], weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ], weekdaysLetter: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],today: 'Hoy',clear: 'Limpiar',close:'Cerrar', monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']}]">
+                    </div>
+                    <div class="input-field col s2">
+                        <label for="lblNum">Nº</label>
+                        <input id="num" type="text">
+                    </div>
+                </div>
+                <div class="row"> <!--Revisar para cargar varios Alumnos-->
+                    <div class="input-field col s2">
+                        <label for="lblGrado">Curso</label>
+                        <input id="txtGrado" type="text">
+                    </div>
+                    <div class="input-field col s2">
+                        <label for="lblTurno">Turno</label>
+                        <input id="txtGrado" type="text">
+                    </div>
+                    <div class="input-field col s2">
+                        <label for="lblEdad">Edad:</label>
+                        <input id="txtEdad" type="text">
+                    </div>
+                    <div class="input-field col s2">
+                        <label for="lblDni">DNI</label>
+                        <input id="dni" type="text">
+                    </div>
+                    <div class="input-field col s2">
+                        <select>
+                        <option value="" disabled selected>Sexo</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <div class="row">
+                    <div class="input-field col s12"><span>Cómo se enteraron del dispositivo</span>
+                        <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <h6>Momento de Intervención</h6>
+                <div class="row">
+                    <br/>
+                    <br/>
+                    <div class="input-field col s3">
+                        <select>
+                            <option value="" disabled selected>Elija una Opción</option>
+                            <option value="1">Recreo</option>
+                            <option value="2">Hora de Clase</option>
+                            <option value="3">Otro...</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s7">
+                        <label for="textarea3">Detalle Otro:</label>
+                        <input id="textarea3" type="text">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <h6>Motivo, Tema y/o Inquietud Presentada</h6>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea4" class="materialize-textarea" data-length="120"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <h6>Se entrego material</h6>
+                <div class="row">
+                    <br/>
+                    <br/>
+                    <div class="input-field col s2">
+                        <input name="group1" type="radio" id="test1" /><label for="test1">Si</label>
+                        <input name="group1" type="radio" id="test2" /><label for="test2">No</label>
+                    </div>
+                    <div class="input-field col s8">
+                        <label for="textarea5">Cuál?</label>
+                        <input id="textarea5" type="text"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card-panel grey lighten-5 z-depth-3">
+                <h6>Acuerdos / Conclusiones</h6>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea6" class="materialize-textarea" data-length="120"></textarea>
+                        <textarea id="textarea7" class="materialize-textarea" data-length="120"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>

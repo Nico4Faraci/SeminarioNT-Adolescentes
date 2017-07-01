@@ -13,7 +13,8 @@ import { routing} from './app-routing';
 import { ArbitrosComponent } from './arbitros/arbitros.component';
 import { IndividualComponent } from './individual/individual.component';
 import { PadreComponent } from './padre-hijo/padre.component';
-import { HijoComponent } from './padre-hijo/hijo.component'
+import { HijoComponent } from './padre-hijo/hijo.component';
+import { GrupalComponent } from './grupal/grupal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HijoComponent } from './padre-hijo/hijo.component'
     ArbitrosComponent,
     IndividualComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    GrupalComponent
   ],
   imports: [
     BrowserModule,
